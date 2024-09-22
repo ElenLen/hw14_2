@@ -22,7 +22,7 @@ let sum = 0;
 grades.forEach((num) => {
   sum += num;
 });
-text = `Средний бал студентов: ${Math.floor(sum / 12)}`;
+text = `Средний бал студентов: ${Math.floor(sum / grades.length)}`;
 console.log(text);
 newText = document.createElement("p");
 newText.className = "main__stat-paragrath";
@@ -48,7 +48,7 @@ newText.textContent = text;
 statDiv.append(newText);
 
 // Посчитайте и выведите количество студентов, получивших положительную оценку (балл выше или равен 60). Используйте метод массива, который фильтрует оценки и оставляет только те, которые соответствуют заданному условию. Затем посчитайте количество оставшихся оценок и выведите результат.
-let newGrage = grades.filter((el) => el >= "60");
+let newGrage = grades.filter((el) => el >= 60);
 text = `${newGrage.length} успешных студентов: ${newGrage}`;
 console.log(`Успешные студенты: ${newGrage}`);
 console.log(`Количество успешных студентов: ${newGrage.length}`);
@@ -58,7 +58,7 @@ newText.textContent = text;
 statDiv.append(newText);
 
 // Посчитайте и выведите количество студентов, получивших отрицательную оценку (балл ниже 60). Используйте аналогичный подход, как в предыдущем шаге.
-let newGrageN = grades.filter((el) => el < "60");
+let newGrageN = grades.filter((el) => el < 60);
 text = `${newGrageN.length} неуспевающих студентов: ${newGrageN}`;
 console.log(`Неуспевающие студенты: ${newGrageN}`);
 console.log(`Количество неуспевающих студентов: ${newGrageN.length}`);
